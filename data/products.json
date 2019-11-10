@@ -1,0 +1,26 @@
+[
+  {
+    "_id": 10,
+    "productKey": "Coffee Mug Best",
+    "description": "Best mug ever!",
+    "unitPrice": 10.00
+  },
+  {
+    "_id": 12,
+    "productKey": "Coffee Mug Dev",
+    "description": "Developers rule!",
+    "unitPrice": 12.00
+  },
+  {
+    "_id": 20,
+    "productKey": "Tshirt green",
+    "description": "I heart HTML",
+    "unitPrice": 20.00
+  },
+  {
+    "_id": 22,
+    "productKey": "Tshirt blue",
+    "description": "I heart CSS",
+    "unitPrice": 22.00
+  }
+]

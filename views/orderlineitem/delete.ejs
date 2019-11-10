@@ -1,0 +1,26 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+
+      <h2>Confirm deletion of orderlineitem line item</h2>
+      <br>
+      <br> ID: <%=  orderlineitem._id %>
+      <br> orderID: <%=orderlineitem.orderID%>
+      <br> lineNumber: <%=orderlineitem.lineNumber%>
+      <br> productID: <%=orderlineitem.productID%>
+      <br> quantity: <%=orderlineitem.quantity%>
+      <hr>
+      
+      <form method="get" action="/orderlineitem">
+        <input type="submit" value="Return to list" class="btn btn-caution" />
+      </form>
+
+      <form method="POST" action="/orderlineitem/delete/<%= orderlineitem._id %>">
+        <input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+      </form>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+
+      <h2>Create a new developer </h2>
+      <br>
+      <% 
+      maxID=0; 
+      for (var i=0; i < developers.length; i++) {
+        if(developers[i]._id > maxID) { 
+          maxID=developers[i]._id;  
+        }
+      }
+      const developer = {}
+      developer._id = maxID+1
+     
+      %>
+      <div class="content">
+        <div>
+          <form name="developer" method="POST" action="/developer/save">
+
+            <div class="form-group" id=frm>
+              <label for="_id">ID</label>
+              <input type="number" class="form-control" id="_id" name="_id" value="<%= maxID+1 %>" required readonly>
+            </div>
+
+            <!-- COMMON TO EDIT AND CREATE -->
+            <%include partial_edit.ejs%>
+
+            <div class="form-group">
+              <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+          </form>
+
+          <form method="get" action="/developer">
+            <input type="submit" value="Return to list" class="btn btn-caution" />
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

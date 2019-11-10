@@ -1,0 +1,101 @@
+<!-- main - a row holds columns -->
+<div class=row>
+  <div class="col col-xs-12">
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" value="<%= customer.email %>" required>
+    </div>
+
+    <div class="form-group">
+      <label for="given">Given name</label>
+      <input type="text" class="form-control" id="given" name="given" value="<%= customer.given %>">
+    </div>
+
+    <div class="form-group">
+      <label for="family">Family name</label>
+      <input type="text" class="form-control" id="family" name="family" value="<%= customer.family %>">
+    </div>
+
+    <div class="form-group">
+      <label for="street1">Street address 1 </label>
+      <input type="text" class="form-control" id="street1" name="street1" value="<%= customer.street1 %>">
+    </div>
+
+    <div class="form-group">
+      <label for="street2">Street address 2 </label>
+      <input type="text" class="form-control" id="street2" name="street2" value="<%= customer.street2 %>">
+    </div>
+
+    <div class="form-group">
+      <label for="city">City </label>
+      <input type="text" class="form-control" id="city" name="city" value="<%= customer.city %>">
+    </div>
+
+    <div class="form-group">
+      <label for="state">State </label>
+      <input type="text" class="form-control" id="state" name="state" value="<%= customer.state %>">
+    </div>
+
+    <div class="form-group">
+      <label for="zip">zip </label>
+      <input type="zipcode" class="form-control" id="zip" name="zip" value="<%= customer.zip %>">
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country </label>
+      <input type="text" class="form-control" id="country" name="country" value="<%= customer.country %>">
+    </div>
+
+  </div>
+</div>
+
+<!-- PUT CLIENT SIDE CODE HERE -->
+<script>
+
+  // function toCurrency(amount) 
+
+  // https://gist.github.com/kylefox/780065
+  function toCurrency(amount) {
+    return "$" + amount.toFixed(2);
+  };
+
+  // function toCurrencyInt(amount) 
+  function toCurrencyInt(amount) {
+    return "$" + amount.toFixed(0);
+  };
+
+  // Add  .toCurrency() method to all Numbers
+  Number.prototype.toCurrency = function () {
+    return toCurrency(this);
+  };
+
+  // Add  .toCurrencyInt() method to all Numbers
+  Number.prototype.toCurrencyInt = function () {
+    return toCurrencyInt(this);
+  };
+
+  function onFormChange() {
+    const newAge = parseFloat($("input[name=age]").val());
+    let price = 75
+    if (newAge == 1) {
+      price = 100
+    }
+    $("#puppyCost").html(price.toCurrencyInt());
+  }
+
+  // window.onload = a function that will call all update functions to display calculated values
+  window.onload = function () {
+    onFormChange();
+  }
+
+  // prevent submission when hitting enter key - optional, but user-friendly 
+  document.forms[0].onkeypress = function (e) {
+    var key = e.charCode || e.keyCode || 0;
+    if (key == 13) {
+      e.preventDefault();
+    }
+  }
+
+// END CLIENT SIDE CODE  (close the script tag)
+</script>

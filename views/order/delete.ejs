@@ -1,0 +1,29 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+
+      <h2>Confirm deletion of order</h2>
+      <br>
+      <br> ID: <%=  order._id %>
+      <br> orderID: <%=order.orderID%>
+      <br> email: <%=order.email%>
+      <br> datePlaced: <%=order.datePlaced%>
+      <br> dateShipped: <%=order.dateShipped%>
+      <br> paymentType: <%=order.paymentType%>
+      <br> amountDue: <%=order.amountDue%>
+      <br> paid: <%=order.paid %>
+      <hr>
+      
+      <form method="get" action="/order">
+        <input type="submit" value="Return to list" class="btn btn-caution" />
+      </form>
+      
+      <form method="POST" action="/order/delete/<%= order._id %>">
+        <input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+      </form>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+
+      <h2>Confirm deletion of developer</h2>
+      <br>
+      <br> ID: <%=  developer._id %>
+      <br> Email: <%=developer.email%>
+      <br> Given: <%=developer.given%>
+      <br> Family: <%=developer.family%>
+      <br> Street 1: <%=developer.street1%>
+      <br> Street 2: <%=developer.street2 %>
+      <br> City: <%=developer.city %>
+      <br> State: <%=developer.state %>
+      <br> Zip: <%=developer.zip %>
+      <br> Country: <%=developer.country %>
+      <br> URL: <%=developer.url %>
+      <hr>
+      
+      <form method="get" action="/developer">
+        <input type="submit" value="Return to list" class="btn btn-caution" />
+      </form>
+
+
+      <form method="POST" action="/developer/delete/<%= developer._id %>">
+        <input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+      </form>
+
+    </div>
+  </div>
+</div>

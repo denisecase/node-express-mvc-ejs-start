@@ -1,0 +1,43 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+      <a href="order/create" class="btn btn-primary new">
+        Create a new order
+      </a>
+
+      <h2>Recent entries</h2>
+      <p>There are
+        <%= orders.length %> orders.
+        <br>
+      </p>
+      <% for (var i = orders.length-1; i >= 0; i--) {   
+        order = orders[i];   %>
+
+      <div class="panel panel-default">
+        <div class="panel-heading"></div>
+        <div class="text-muted pull-right"></div>
+        <div class="panel-body">
+
+          <br> ID: <%=  order._id %>
+          <br> orderID: <%=order.orderID%>
+          <br> email: <%=order.email%>
+          <br> datePlaced: <%=order.datePlaced%>
+          <br> dateShipped: <%=order.dateShipped%>
+          <br> paymentType: <%=order.paymentType%>
+          <br> amountDue: <%=order.amountDue%>
+          <br> paid: <%=order.paid %>
+          <hr>
+          <a href="/order/delete/<%= order._id  %>" class="btn btn-danger"> Delete </a>
+          <a href="/order/details/<%= order._id %>" class="btn btn-info"> Details </a>
+          <a href="/order/edit/<%= order._id %>" class="btn btn-primary"> Edit </a>
+          <hr>
+          <hr>
+        </div>
+      </div>
+      <% } %>
+
+    </div>
+  </div>
+</div>

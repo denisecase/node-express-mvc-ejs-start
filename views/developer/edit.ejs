@@ -1,0 +1,29 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+
+      <h2>Edit developer </h2>
+
+      <div class="content">
+        <form method="POST" action="/developer/save/<%= developer._id %>">
+          <div class="form-group" id=frm>
+            <label for="_id">ID</label>
+            <input type="number" class="form-control" id="_id" name="_id" value="<%= developer._id %>" required disabled>
+          </div>
+
+          <!-- COMMON TO EDIT AND CREATE -->
+          <%include partial_edit.ejs %>
+          
+          <input type="submit" value="Save" class="btn btn-primary" />
+        </form>
+
+        <form method="get" action="/developer">
+          <input type="submit" value="Return to list" class="btn btn-caution" />
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

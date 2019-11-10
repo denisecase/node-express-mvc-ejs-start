@@ -1,0 +1,46 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+      <a href="customer/create" class="btn btn-primary new">
+        Create a new customer
+      </a>
+
+      <h2>Recent entries</h2>
+      <p>There are
+        <%= customers.length %> customers.
+        <br>
+      </p>
+      <% for (let i = customers.length-1; i >= 0; i--) {   
+        customer = customers[i];   %>
+
+      <div class="panel panel-default">
+        <div class="panel-heading"></div>
+        <div class="text-muted pull-right"></div>
+        <div class="panel-body">
+
+          <br> ID: <%=  customer._id %>
+          <br> Email: <%=customer.email%>
+          <br> Given: <%=customer.given%>
+          <br> Family: <%=customer.family%>
+          <br> Street 1: <%=customer.street1%>
+          <br> Street 2: <%=customer.street2 %>
+          <br> City: <%=customer.city %>
+          <br> State: <%=customer.state %>
+          <br> Zip: <%=customer.zip %>
+          <br> Country: <%=customer.country %>
+
+          <hr>
+          <a href="/customer/delete/<%= customer._id  %>" class="btn btn-danger"> Delete </a>
+          <a href="/customer/details/<%= customer._id %>" class="btn btn-info"> Details </a>
+          <a href="/customer/edit/<%= customer._id %>" class="btn btn-primary"> Edit </a>
+          <hr>
+          <hr>
+        </div>
+      </div>
+      <% } %>
+
+    </div>
+  </div>
+</div>

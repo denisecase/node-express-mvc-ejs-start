@@ -1,0 +1,44 @@
+[
+  {
+    "_id": 1,
+    "email": "dcase@nwmissouri.edu",
+    "given": "Denise",
+    "family": "Case",
+    "street1": "800 University Drive",
+    "street2": "",
+    "city": "Maryville",
+    "state": "MO",
+    "zip": 64468,
+    "country": "USA"
+  },
+  {
+    "_id": 91,
+    "email": "s533975@nwmissouri.edu",
+    "given": "Lohitha",
+    "family": "Bhethalam",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "zip": 500070,
+    "country": "INDIA"
+  },
+  {
+    "_id": 92,
+    "email": "S533901@nwmissouri.edu",
+    "given": "Rahul",
+    "family": "Dayam",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "zip": 500035,
+    "country": "INDIA"
+  },
+  {
+    "_id": 93,
+    "email": "s533708@nwmissouri.edu",
+    "given": "Sai Krishna Teja",
+    "family": "Kancharla",
+    "city": "Vijayawada",
+    "state": "Andhra Pradesh",
+    "zip": 520003,
+    "country": "INDIA"
+  }
+]

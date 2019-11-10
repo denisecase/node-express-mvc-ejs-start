@@ -1,0 +1,21 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+
+      <h2>Product details</h2>
+      <br>
+      <br> ID: <%=  product._id %>
+      <br> productKey: <%=product.productKey%>
+      <br> description: <%=product.description%>
+      <br> unitPrice: <%=product.unitPrice%>
+      <hr>
+
+      <form method="get" action="/product">
+        <input type="submit" value="Return to list" class="btn btn-caution" />
+      </form>
+
+    </div>
+  </div>
+</div>

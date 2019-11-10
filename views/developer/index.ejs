@@ -1,0 +1,47 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+      <a href="developer/create" class="btn btn-primary new">
+        Create a new developer
+      </a>
+
+      <h2>Recent entries</h2>
+      <p>There are
+        <%= developers.length %> developers.
+        <br>
+      </p>
+      <% for (let i = developers.length-1; i >= 0; i--) {   
+        developer = developers[i];   %>
+
+      <div class="panel panel-default">
+        <div class="panel-heading"></div>
+        <div class="text-muted pull-right"></div>
+        <div class="panel-body">
+
+          <br> ID: <%=  developer._id %>
+          <br> Email: <%=developer.email%>
+          <br> Given: <%=developer.given%>
+          <br> Family: <%=developer.family%>
+          <br> Street 1: <%=developer.street1%>
+          <br> Street 2: <%=developer.street2 %>
+          <br> City: <%=developer.city %>
+          <br> State: <%=developer.state %>
+          <br> Zip: <%=developer.zip %>
+          <br> Country: <%=developer.country %>
+          <br> URL: <%=developer.url %>
+
+          <hr>
+          <a href="/developer/delete/<%= developer._id  %>" class="btn btn-danger"> Delete </a>
+          <a href="/developer/details/<%= developer._id %>" class="btn btn-info"> Details </a>
+          <a href="/developer/edit/<%= developer._id %>" class="btn btn-primary"> Edit </a>
+          <hr>
+          <hr>
+        </div>
+      </div>
+      <% } %>
+
+    </div>
+  </div>
+</div>

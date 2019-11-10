@@ -1,0 +1,28 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+
+      <h2>Customer details</h2>
+      <br>
+      <br> ID: <%=  customer._id %>
+      <br> Email: <%=customer.email%>
+      <br> Given: <%=customer.given%>
+      <br> Family: <%=customer.family%>
+      <br> Street 1: <%=customer.street1%>
+      <br> Street 2: <%=customer.street2 %>
+      <br> City: <%=customer.city %>
+      <br> State: <%=customer.state %>
+      <br> Zip: <%=customer.zip %>
+      <br> Country: <%=customer.country %>
+      <br> URL: <%=developer.url %>
+      <hr>
+
+      <form method="get" action="/customer">
+        <input type="submit" value="Return to list" class="btn btn-caution" />
+      </form>
+
+    </div>
+  </div>
+</div>

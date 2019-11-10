@@ -1,0 +1,20 @@
+/* ==========================================================================
+   needed for fixed navbar and fixed footer
+   ========================================================================== */
+
+   body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    /* expand vertically without hiding any */
+   flex: 1 1 0;
+   padding: 60px 15px 0;
+   max-width: 700px;
+   margin-right: auto;
+   margin-left: auto;
+  }
+  
+  

@@ -1,0 +1,22 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+
+      <h2>Order line item details</h2>
+      <br>
+      <br> ID: <%=  orderlineitem._id %>
+      <br> orderID: <%=orderlineitem.orderID%>
+      <br> lineNumber: <%=orderlineitem.lineNumber%>
+      <br> productID: <%=orderlineitem.productID%>
+      <br> quantity: <%=orderlineitem.quantity%>
+      <hr>
+
+      <form method="get" action="/orderlineitem">
+        <input type="submit" value="Return to list" class="btn btn-caution" />
+      </form>
+
+    </div>
+  </div>
+</div>

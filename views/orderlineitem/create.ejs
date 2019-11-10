@@ -1,0 +1,42 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+
+      <h2>Create a new order line item </h2>
+      <br>
+      <% 
+      maxID=0; 
+      for (var i=0; i < orderlineitems.length; i++) {
+        if(orderlineitems[i]._id > maxID) { 
+          maxID=orderlineitems[i]._id;  
+        }
+      }
+      %>
+      <div class="content">
+        <div>
+          <form name="orderlineitem" method="POST" action="/orderlineitem/save">
+
+            <div class="form-group" id=frm>
+              <label for="_id">ID</label>
+              <input type="number" class="form-control" id="_id" name="_id" value="<%= maxID+1 %>" required readonly>
+            </div>
+
+            <!-- COMMON TO EDIT AND CREATE -->
+            <%include partial_edit.ejs%>
+
+            <div class="form-group">
+              <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+          </form>
+
+          <form method="get" action="/orderlineitem">
+            <input type="submit" value="Return to list" class="btn btn-caution" />
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

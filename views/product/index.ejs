@@ -1,0 +1,38 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class=row>
+    <div class="col col-md-12">
+      <a href="product/create" class="btn btn-primary new">
+        Create a new product
+      </a>
+
+      <h2>Recent entries</h2>
+      <p>There are
+        <%= products.length %> products.
+        <br>
+      </p>
+      <% for (var i = products.length-1; i >= 0; i--) {   
+        product = products[i];   %>
+      <div class="panel panel-default">
+        <div class="panel-heading"></div>
+        <div class="text-muted pull-right"></div>
+        <div class="panel-body">
+
+          <br> ID: <%=  product._id %>
+          <br> productKey: <%=product.productKey%>
+          <br> description: <%=product.description%>
+          <br> unitPrice: <%=product.unitPrice%>
+          <hr>
+          <a href="/product/delete/<%= product._id  %>" class="btn btn-danger"> Delete </a>
+          <a href="/product/details/<%= product._id %>" class="btn btn-info"> Details </a>
+          <a href="/product/edit/<%= product._id %>" class="btn btn-primary"> Edit </a>
+          <hr>
+          <hr>
+        </div>
+      </div>
+      <% } %>
+
+    </div>
+  </div>
+</div>
