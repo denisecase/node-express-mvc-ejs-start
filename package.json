@@ -25,7 +25,7 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": "latest"
+    "node": "^10"
   },
   "dependencies": {
     "array-flatten": "latest",

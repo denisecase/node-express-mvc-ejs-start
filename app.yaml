@@ -1,0 +1,34 @@
+# app.yaml for deploying with Google Cloud Platform (GCP)
+# Node.js app
+# Runs in standard sandbox mode for free deployment 
+
+runtime: nodejs10
+env: standard
+
+# The settings below are to reduce costs during testing and are not appropriate
+# for production use. For more information, see:
+# https://cloud.google.com/appengine/docs/flexible/nodejs/configuring-your-app-with-app-yaml
+
+basic_scaling:
+  idle_timeout: 600s
+  max_instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+  
+# Commands require installing GCloud SDK
+# Deploying requires enabling Cloud Build API and billing.
+#
+# A GCP Project contains an App Engine Application
+#
+# gcloud projects create node-express-mvc-ejs-start --set-as-default 
+# gcloud projects describe node-express-mvc-ejs-start
+# gcloud app create --project=node-express-mvc-ejs-start
+# gcloud app deploy
+
+# Results:
+# descriptor:      [C:\44563\node-express-mvc-ejs-start\app.yaml]
+# source:          [C:\44563\node-express-mvc-ejs-start]
+# target project:  [node-express-mvc-ejs-start]
+# target url:      [https://node-express-mvc-ejs-start.appspot.com]
