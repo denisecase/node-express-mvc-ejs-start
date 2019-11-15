@@ -77,8 +77,9 @@ Following must be downloaded, installed, and configured according to the product
 1. Install GCloud SDK
 1. Enable Cloud Build API and billing.
 1. Use the commands below to create a project - use your repo name.
-1. Then initialize an App Engine Application in the project.
+1. Then initialize an App Engine Application in the project - it will ask for a region. Choose one nearby with free option.
 1. package.json needs new dependency: @google-cloud/logging-winston
+1. package.json needs to set the node entry value to "^10"
 1. See app.yaml for suggested settings.
 
 ```PowerShell
