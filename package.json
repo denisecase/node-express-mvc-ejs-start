@@ -28,12 +28,13 @@
     "node": "^10"
   },
   "dependencies": {
+    "@google-cloud/logging-winston": "^3.0.0",
     "array-flatten": "latest",
     "async": "latest",
     "body-parser": "latest",
     "chalk": "latest",
-    "cookie-parser": "latest",
     "consolidate": "latest",
+    "cookie-parser": "latest",
     "dotenv": "latest",
     "ejs": "latest",
     "errorhandler": "latest",

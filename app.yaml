@@ -19,6 +19,7 @@ resources:
   
 # Commands require installing GCloud SDK
 # Deploying requires enabling Cloud Build API and billing.
+# Logging requires new package @google-cloud/logging-winston
 #
 # A GCP Project contains an App Engine Application
 #
@@ -26,6 +27,10 @@ resources:
 # gcloud projects describe node-express-mvc-ejs-start
 # gcloud app create --project=node-express-mvc-ejs-start
 # gcloud app deploy
+# gcloud app browse
+
+# New session - log in and then set project
+# gcloud config set project node-express-mvc-ejs-start
 
 # Results:
 # descriptor:      [C:\44563\node-express-mvc-ejs-start\app.yaml]

@@ -145,10 +145,10 @@ app.use((req, res) => { res.status(404).render('404.ejs') }) // handle page not 
 
 // call app.listen to start server
 const host = app.get('host')
-const env = app.get('env')
+const env = isProduction ? 'production' : 'development'
 
 app.listen(process.env.PORT || 8089, () => {
-  console.log(`\nApp running at http://${host}:${port}/ in ${env} mode`)
+  console.log(`\nApp running at http://${host}:${port}/ with ${env} data`)
   console.log('Press CTRL-C to stop\n')
 })
 
