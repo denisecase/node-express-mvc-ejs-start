@@ -81,6 +81,7 @@ Following must be downloaded, installed, and configured according to the product
 1. package.json needs new dependency: @google-cloud/logging-winston
 1. package.json needs to set the node entry value to "^10"
 1. See app.yaml for suggested settings.
+1. After the app deploy command, you will get an error. Read the error and go to the URL provided to enable billing. 
 
 ```PowerShell
 gcloud projects create node-express-mvc-ejs-start --set-as-default 
