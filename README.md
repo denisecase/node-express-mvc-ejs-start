@@ -4,7 +4,7 @@
 
 ## Links
 
-- [Demo](https://denisecase.github.io/node-express-mvc-ejs-start/)
+- [Demo](https://node-express-mvc-ejs-start.appspot.com)
 - [Source](https://github.com/denisecase/node-express-mvc-ejs-start)
 
 ## About
@@ -65,6 +65,44 @@ Following must be downloaded, installed, and configured according to the product
 - [JavaScript Standard Style Validator](https://standardjs.com/demo.html)
 - [ESLint](https://eslint.org/)
 - [TravisCI](https://travis-ci.org/)
+- [Data Hosting with Atlas](https://www.mongodb.com/cloud/atlas)
+- [App Hosting with Google Cloud Platform](https://cloud.google.com/gcp)
+- [GCP Eduction Credits for Faculty](https://edu.google.com/programs/faculty/?modal_active=none)
+
+## Deploy with Google Cloud Platform
+
+1. Choose a person to host your application code.
+1. Hoster should click on their Student Coupon Retrieval Link.
+1. Follow instructions to get an account.
+1. Install GCloud SDK
+1. Enable Cloud Build API and billing.
+1. Use the commands below to create a project - use your repo name.
+1. Then initialize an App Engine Application in the project.
+1. package.json needs new dependency: @google-cloud/logging-winston
+1. See app.yaml for suggested settings.
+
+```PowerShell
+gcloud projects create node-express-mvc-ejs-start --set-as-default 
+gcloud projects describe node-express-mvc-ejs-start
+gcloud app create --project=node-express-mvc-ejs-start
+gcloud app deploy
+gcloud app browse
+```
+
+When starting a new session, you'll have to log in again and then set the project.
+
+```PowerShell
+gcloud config set project node-express-mvc-ejs-start
+```
+
+You should get some results that include something like the following.
+
+```PowerShell
+descriptor:      C:\44563\node-express-mvc-ejs-start\app.yaml
+source:          C:\44563\node-express-mvc-ejs-start
+target project:  node-express-mvc-ejs-start
+target url:      <https://node-express-mvc-ejs-start.appspot.com>
+```
 
 ## See Also
 
