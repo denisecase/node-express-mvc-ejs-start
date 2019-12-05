@@ -4,7 +4,8 @@
 
 ## Links
 
-- [Demo](https://node-express-mvc-ejs-start.appspot.com)
+- [Demo on Heroku](https://node-express-mvc-ejs-start-h.herokuapp.com/)
+- [Demo on Google Cloud](https://node-express-mvc-ejs-start.appspot.com)
 - [Source](https://github.com/denisecase/node-express-mvc-ejs-start)
 
 ## About
@@ -81,10 +82,12 @@ OR
 1. Signup for Heroku account.
 1. Install Heroku CLI.
 1. Create a new app with a unique name (this will appear in your app URI).
+1. Go to App / Settings / Config Vars and add an ATLAS_URI key with the value from your .env.
 1. Go to App / Settings / Heroku Git URL and copy the URL to clipboard to paste in following command.
-1. Create a heroku alias to this URL. Either use TortoiseGit / Settings / Remote to create heroku and set it to the URL - or open PowerShell as Admin in your root project folder and use just your Heroku app name in the command below:
+1. Create a git alias named heroku that points to this URL. Either use TortoiseGit / Settings / Remote to create heroku and set it to the URL - or open PowerShell as Admin in your root project folder and use just your Heroku app name in the command below:
 
 ```PowerShell
+heroku login
 heroku git:remote -a yourHerokuAppName
 ```
 
@@ -109,10 +112,10 @@ git push heroku master
 1. package.json needs new dependency: @google-cloud/logging-winston
 1. package.json needs to set the node entry value to "^10"
 1. See app.yaml for suggested settings.
-1. After the app deploy command, you will get an error. Read the error and go to the URL provided to enable billing. 
+1. After the app deploy command, you will get an error. Read the error and go to the URL provided to enable billing.
 
 ```PowerShell
-gcloud projects create node-express-mvc-ejs-start --set-as-default 
+gcloud projects create node-express-mvc-ejs-start --set-as-default
 gcloud projects describe node-express-mvc-ejs-start
 gcloud app create --project=node-express-mvc-ejs-start
 gcloud app deploy
