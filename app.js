@@ -52,35 +52,30 @@ const connectionOptions = {
   dbName: DB_NAME,
   useNewUrlParser: true,
   useCreateIndex: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true,
-  autoIndex: false, // Don't build indexes
-  reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
-  reconnectInterval: 500, // Reconnect every 500ms
-  poolSize: 10, // Maintain up to 10 socket connections
-  // If not connected, return errors immediately rather than waiting for reconnect
-  bufferMaxEntries: 0,
-  connectTimeoutMS: 10000, // Give up initial connection after 10 seconds
-  socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
-  family: 4 // Use IPv4, skip trying IPv6
+  useUnifiedTopology: true
 }
 
 // use mongoose to connect & create a default connection
-const db = mongoose.connect(dbURI, connectionOptions, (err, client) => {
-  if (!err) { console.log('MongoDB connection succeeded.') } else { console.log('Error in MongoDB connection : ' + JSON.stringify(err, undefined, 2)) }
+mongoose.connect(dbURI, connectionOptions, (err, client) => {
+  if (err) { LOG.error('Error in MongoDB connection : ' + JSON.stringify(err, undefined, 2)) }
+  LOG.info('MongoDB connection succeeded.')
 })
 
 // Get the default connection
 const connection = mongoose.connection
 
+// Resusable function to seed a collection of documents
 function seed (collectionName) {
   LOG.info(`Seeding collection = ${collectionName}`)
   connection.db.collection(collectionName, (err, c) => {
+    if (err) { LOG.error('Error adding collection.') }
     c.countDocuments((err, count) => {
-      if (!err && count === 0) { c.insertMany(require('./data/' + collectionName + '.json')) }
+      if (err) { LOG.error('Error counting documents in collection.') }
+      if (count === 0) { c.insertMany(require('./data/' + collectionName + '.json')) }
     })
     c.find({}).toArray((err, data) => {
-      // console.log(data)
+      if (err) { LOG.error('Error adding data to collection.') }
+      LOG.info(data)
     })
   })
 }
