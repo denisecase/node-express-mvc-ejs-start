@@ -42,7 +42,7 @@ Following must be downloaded, installed, and configured according to the product
 3. Copy .env.example to .env
 4. Update .env with your information.
 5. Open PowerShell in root folder and run `npm install` to install dependencies.
-6. Run `nodemon app.js` to start the server.
+6. Run `node app.js` to start the server.
 7. Open browser to the location displayed, e.g. <http://localhost:3004/>.
 
 ## Production Environment
@@ -66,8 +66,36 @@ Following must be downloaded, installed, and configured according to the product
 - [ESLint](https://eslint.org/)
 - [TravisCI](https://travis-ci.org/)
 - [Data Hosting with Atlas](https://www.mongodb.com/cloud/atlas)
+
+## Choose from 2 deployment options
+
+- [App Hosting with Heroku](https://www.heroku.com/)
+
+OR
+
 - [App Hosting with Google Cloud Platform](https://cloud.google.com/gcp)
 - [GCP Eduction Credits for Faculty](https://edu.google.com/programs/faculty/?modal_active=none)
+
+## Set up Heroku
+
+1. Signup for Heroku account.
+1. Install Heroku CLI.
+1. Create a new app with a unique name (this will appear in your app URI).
+1. Go to App / Settings / Heroku Git URL and copy the URL to clipboard to paste in following command.
+1. Create a heroku alias to this URL. Either use TortoiseGit / Settings / Remote to create heroku and set it to the URL - or open PowerShell as Admin in your root project folder and use just your Heroku app name in the command below:
+
+```PowerShell
+heroku git:remote -a yourHerokuAppName
+```
+
+## Deploy with Heroku
+
+After making changes, open PowerShell as Admin in your root project folder:
+
+```PowerShell
+heroku login
+git push heroku master
+```
 
 ## Deploy with Google Cloud Platform
 
