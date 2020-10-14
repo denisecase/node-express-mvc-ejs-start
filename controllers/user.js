@@ -47,12 +47,11 @@ app.get('/', (req, res, next) => {
       return;
     }
     const data = {
-      name: req.body.name,
       email: req.body.email,
       password: md5(req.body.password)
     }
-    const sql = 'INSERT INTO user (name, email, password) VALUES (?,?,?)'
-    const params = [data.name, data.email, data.password]
+    const sql = 'INSERT INTO user (email, password) VALUES (?,?)'
+    const params = [data.email, data.password]
     db.run(sql, params, function (err, result) {
       if (err) {
         res.status(400).json({ 'error': err.message })
@@ -68,16 +67,13 @@ app.get('/', (req, res, next) => {
   
   // POST update with id
   
-  app.patch('/save/:id', (req, res, next) => {
+  app.patch('/change-password/:id', (req, res, next) => {
     var data = {
-      name: req.body.name,
       email: req.body.email,
       password: req.body.password ? md5(req.body.password) : undefined
     }
     db.run(
-      `UPDATE user set 
-           name = coalesce(?,name), 
-           email = COALESCE(?,email), 
+      `UPDATE user set  
            password = coalesce(?,password) 
            WHERE id = ?`,
       [data.name, data.email, data.password, req.params.id],
@@ -96,7 +92,7 @@ app.get('/', (req, res, next) => {
   // DELETE by id
   app.delete('/:id', (req, res, next) => {
     db.run(
-      'DELETE FROM user WHERE id = ?',
+      'DELETE FROM user WHERE email = ?',
       req.params.id,
       function (err, result) {
         if (err) {

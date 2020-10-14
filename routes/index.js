@@ -26,7 +26,7 @@ router.use('/developer', require('../controllers/developer.js'))
 router.use('/orderlineitem', require('../controllers/orderlineitem.js'))
 router.use('/order', require('../controllers/order.js'))
 router.use('/product', require('../controllers/product.js'))
-router.use('/user', require('../controllers/user.js'))
+//router.use('/user', require('../controllers/user.js'))
 
 
 // catch 404 and forward to error handler

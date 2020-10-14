@@ -124,18 +124,20 @@ const sqldb = new sqlite3.Database(dbpath, err => {
   console.log(`Successful connection to the SQLite database ${dbpath}.`);
 
   // seed relational data
-  db.run('CREATE TABLE IF NOT EXISTS user (email text,password text,userId INTEGER PRIMARY KEY AUTOINCREMENT,userName text)');
+  sqldb.run('CREATE TABLE IF NOT EXISTS user (email text,password text,userId INTEGER PRIMARY KEY AUTOINCREMENT,userName text)');
   
   // Table just created, creating some rows
-  let sql = 'INSERT INTO user (email, password,userName) VALUES (?,?,?)';
-  db.run(sql, ["ravuluri@gmail.com", md5("ravi1432"), "ravi"]);
-  db.run(sql, ["anusha12@gmail.com", md5("anus1233"), "anuravi"]);
-  db.run(sql, ["sandy@gmail.com", md5("sandy123"), "sandy12"]);
-  db.run(sql, ["devi@gmail.com", md5("devi4590"), "devi45"]);
-  db.run(sql, ["tarun@gmail.com", md5("tarun231"), "tarunfarhen"]);
-  db.run(sql, ["aswin@gmail.com", md5("aswin456"), "aswinrebeca"]);
-  db.run(sql, ["raghu@gmail.com", md5("raghu2345"), "raghunikki"]);
-  db.run(sql, ["eswar@gmail.com", md5("eswar546"), "eswarfox"]);
+  let sql = 'INSERT INTO user (email, password) VALUES (?,?)';
+  sqldb.run(sql, ["ravuluri@gmail.com", md5("ravi1432")]);
+  sqldb.run(sql, ["anusha12@gmail.com", md5("anus1233")]);
+  sqldb.run(sql, ["sandy@gmail.com", md5("sandy123")]);
+  sqldb.run(sql, ["devi@gmail.com", md5("devi4590")]);
+  sqldb.run(sql, ["tarun@gmail.com", md5("tarun231")]);
+  sqldb.run(sql, ["aswin@gmail.com", md5("aswin456")]);
+  sqldb.run(sql, ["raghu@gmail.com", md5("raghu2345")]);
+  sqldb.run(sql, ["eswar@gmail.com", md5("eswar546")]);
+  sqldb.run(sql, ["dcase@nwmissouri.edu", md5("dcase")]);
+
 });
 
 // configure app.settings.............................
