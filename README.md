@@ -22,6 +22,8 @@ Use this starter app to initialize a full-stack app using:
 - BootStrap Material Design framework for responsive design
 - Morgan HTTP request logger
 - Winston multi-level logger that transports to log files
+- SQLite database
+- <https://sqlitebrowser.org/>
 - Cypress.io testing 
 
 ```PowerShell
