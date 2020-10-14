@@ -23,18 +23,23 @@ Use this starter app to initialize a full-stack app using:
 - Morgan HTTP request logger
 - Winston multi-level logger that transports to log files
 - SQLite database
-- <https://sqlitebrowser.org/>
+- <https://sqlitestudio.pl/>
 - Cypress.io testing 
 
 ```PowerShell
 choco install sqlite -y
-choco install sqlitebrowser -y
+choco install sqlitestudio -y
+refresh env
 npm install sqlite3
 
 npm install cypress --save-dev
 npx cypress open
 npm run cypress
 ```
+
+My SQLitebrowser did not not start, so I switched to SQLite Studio. 
+
+To start SQLite Studio, hit Windows start key, type SQLite Studio and run as administrator.  
 
 ## Prerequisites
 

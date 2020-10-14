@@ -44,6 +44,7 @@
     "helmet": "latest",
     "lodash": "latest",
     "lodash.find": "latest",
+    "md5": "latest",
     "mongodb": "latest",
     "mongoose": "latest",
     "morgan": "latest",

@@ -41,6 +41,8 @@ LOG.info(`Running on ${port}`)
 const isProduction = process.env.NODE_ENV === 'production'
 LOG.info(`Environment isProduction = ${isProduction}`)
 
+// Connect to NoSQL datastore........................
+
 // choose the connection
 const dbURI = isProduction ? encodeURI(process.env.ATLAS_URI) : encodeURI(process.env.LOCAL_MONGODB_URI)
 LOG.info('MongoDB URL = ' + dbURI)
@@ -66,7 +68,7 @@ mongoose.connect(dbURI, connectionOptions, (err, client) => {
 const connection = mongoose.connection
 
 // Resusable function to seed a collection of documents
-function seed (collectionName) {
+function seed(collectionName) {
   LOG.info(`Seeding collection = ${collectionName}`)
   connection.db.collection(collectionName, (err, c) => {
     if (err) { LOG.error('Error adding collection.') }
@@ -109,17 +111,31 @@ connection.once('open', function () {
 
 // add a relational datastore........................
 
+const md5 = require('md5'); // hashes passwords 
 const sqlite3 = require('sqlite3').verbose();
 const dbfile = 'db.sqlite';
 const dbpath = path.join(__dirname, 'database', dbfile);
 
 // create Database object representing the connection to the SQLite database
-
 const sqldb = new sqlite3.Database(dbpath, err => {
   if (err) {
     return console.error(err.message);
   }
   console.log(`Successful connection to the SQLite database ${dbpath}.`);
+
+  // seed relational data
+  db.run('CREATE TABLE IF NOT EXISTS user (email text,password text,userId INTEGER PRIMARY KEY AUTOINCREMENT,userName text)');
+  
+  // Table just created, creating some rows
+  let sql = 'INSERT INTO user (email, password,userName) VALUES (?,?,?)';
+  db.run(sql, ["ravuluri@gmail.com", md5("ravi1432"), "ravi"]);
+  db.run(sql, ["anusha12@gmail.com", md5("anus1233"), "anuravi"]);
+  db.run(sql, ["sandy@gmail.com", md5("sandy123"), "sandy12"]);
+  db.run(sql, ["devi@gmail.com", md5("devi4590"), "devi45"]);
+  db.run(sql, ["tarun@gmail.com", md5("tarun231"), "tarunfarhen"]);
+  db.run(sql, ["aswin@gmail.com", md5("aswin456"), "aswinrebeca"]);
+  db.run(sql, ["raghu@gmail.com", md5("raghu2345"), "raghunikki"]);
+  db.run(sql, ["eswar@gmail.com", md5("eswar546"), "eswarfox"]);
 });
 
 // configure app.settings.............................
