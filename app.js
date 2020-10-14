@@ -112,9 +112,13 @@ app.set('host', process.env.HOST)
 // set the root view folder
 app.set('views', path.join(__dirname, 'views'))
 
-// specify desired view engine (EJS)
+// specify original view engine (EJS)
 app.set('view engine', 'ejs')
 app.engine('ejs', engines.ejs)
+
+// specify additional view engine (Pug)
+app.set('view engine', 'pug')
+app.engine('pug', engines.pug)
 
 // configure middleware.....................................................
 app.use(favicon(path.join(__dirname, '/public/images/favicon.ico')))
