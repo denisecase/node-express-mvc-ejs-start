@@ -20,7 +20,6 @@ const chalk = require('chalk')
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const passport = require('passport');
-
 const LOG = require('./utils/logger.js')
 
 // create express app
@@ -107,6 +106,21 @@ connection.once('open', function () {
     process.exit(1)
   })
 })
+
+// add a relational datastore........................
+
+const sqlite3 = require('sqlite3').verbose();
+const dbfile = 'db.sqlite';
+const dbpath = path.join(__dirname, 'database', dbfile);
+
+// create Database object representing the connection to the SQLite database
+
+const sqldb = new sqlite3.Database(dbpath, err => {
+  if (err) {
+    return console.error(err.message);
+  }
+  console.log(`Successful connection to the SQLite database ${dbpath}.`);
+});
 
 // configure app.settings.............................
 app.set('host', process.env.HOST)

@@ -53,6 +53,7 @@
     "sequelize": "latest",
     "serve-favicon": "latest",
     "sort-package-json": "latest",
+    "sqlite3": "^5.0.0",
     "winston": "latest"
   },
   "devDependencies": {

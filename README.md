@@ -29,6 +29,7 @@ Use this starter app to initialize a full-stack app using:
 ```PowerShell
 choco install sqlite -y
 choco install sqlitebrowser -y
+npm install sqlite3
 
 npm install cypress --save-dev
 npx cypress open
