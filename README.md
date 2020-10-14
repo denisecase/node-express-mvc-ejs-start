@@ -14,7 +14,7 @@ Use this starter app to initialize a full-stack app using:
 
 - Node.js platform
 - Express web framework
-- EJS templating engine
+- EJS templating engine (adding Pug)
 - MVC design pattern
 - Mongoose MongoDB object modeling
 - Lodash for JavaScript object iteration and manipulation
@@ -22,6 +22,13 @@ Use this starter app to initialize a full-stack app using:
 - BootStrap Material Design framework for responsive design
 - Morgan HTTP request logger
 - Winston multi-level logger that transports to log files
+- Cypress.io testing 
+
+```PowerShell
+npm install cypress --save-dev
+npx cypress open
+npm run cypress
+```
 
 ## Prerequisites
 
@@ -140,3 +147,4 @@ target url:      <https://node-express-mvc-ejs-start.appspot.com>
 ## See Also
 
 - [More App Examples](https://profcase.github.io/web-apps-list/)
+- [Add Cypress](https://www.freecodecamp.org/news/how-to-add-end-to-end-tests-to-your-project-with-cypress-a74437f6df6e/)

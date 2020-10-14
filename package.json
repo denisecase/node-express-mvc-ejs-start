@@ -56,6 +56,7 @@
     "winston": "latest"
   },
   "devDependencies": {
+    "cypress": "latest",
     "eslint": "latest",
     "eslint-config-standard": "latest",
     "eslint-plugin-import": "latest",
@@ -67,6 +68,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "cypress": "node scripts/cypress.js"
   }
 }
