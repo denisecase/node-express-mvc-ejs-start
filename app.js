@@ -19,6 +19,8 @@ const errorHandler = require('errorhandler')
 const chalk = require('chalk')
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
+const passport = require('passport');
+
 const LOG = require('./utils/logger.js')
 
 // create express app
@@ -135,6 +137,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 app.use(expressLayouts)
 app.use(errorHandler()) // load error handler
+
+// read passport configuration 
+const passportConfig = require('./config/passport');
+
+// set up user authentication with passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 const routes = require('./routes/index.js')
 app.use('/', routes) // load routing to handle all requests

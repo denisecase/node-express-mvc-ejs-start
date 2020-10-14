@@ -47,6 +47,7 @@
     "mongodb": "latest",
     "mongoose": "latest",
     "morgan": "latest",
+    "passport": "latest",
     "pug": "latest",
     "request": "latest",
     "sequelize": "latest",
