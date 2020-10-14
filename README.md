@@ -154,3 +154,4 @@ target url:      <https://node-express-mvc-ejs-start.appspot.com>
 
 - [More App Examples](https://profcase.github.io/web-apps-list/)
 - [Add Cypress](https://www.freecodecamp.org/news/how-to-add-end-to-end-tests-to-your-project-with-cypress-a74437f6df6e/)
+- [SQLite CRUD](https://blog.pagesd.info/2019/10/08/crud-with-express-sqlite-10-steps/)
