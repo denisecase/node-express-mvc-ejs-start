@@ -27,6 +27,9 @@ Use this starter app to initialize a full-stack app using:
 - Cypress.io testing 
 
 ```PowerShell
+choco install sqlite -y
+choco install sqlitebrowser -y
+
 npm install cypress --save-dev
 npx cypress open
 npm run cypress
